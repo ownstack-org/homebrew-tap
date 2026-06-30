@@ -26,10 +26,11 @@ class Ownstack < Formula
   end
 
   def install
-    # Tarball expands to cli/{bin,templates,completions,docs.yml}. Install the
-    # whole layout under libexec so the binary finds templates/docs.yml by
-    # walking up from its own location; expose only the launcher on PATH.
-    libexec.install Dir["cli/*"]
+    # Tarball expands to cli/{bin,templates,completions,docs.yml}; Homebrew
+    # strips the single top-level dir, so the contents land at the staging
+    # root. Handle both layouts. Install the whole layout under libexec so the
+    # binary finds templates/docs.yml by walking up from its own location.
+    libexec.install(Dir["cli"].any? ? Dir["cli/*"] : Dir["*"])
     bin.install_symlink libexec/"bin/ownstack"
 
     if (libexec/"completions/ownstack.bash").exist?
