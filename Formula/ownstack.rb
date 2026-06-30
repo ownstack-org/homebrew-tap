@@ -1,27 +1,27 @@
 class Ownstack < Formula
   desc "Heroku-style ergonomics on infrastructure you own (OwnStack control-plane CLI)"
   homepage "https://ownstack.org"
-  version "2026.6.30"
+  version "2026.6.30.1"
 
   on_macos do
     on_arm do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-4842dcf.tar.gz"
-      sha256 "fd8627c560699291471254006f85687ad0c92796021be3140caf68d8525edf03"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-8431ea1.tar.gz"
+      sha256 "d75d8417e4f25e6c26166a560f96ce6bedc4ed173186e65ebaf6f4657893c7d6"
     end
     on_intel do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-4842dcf.tar.gz"
-      sha256 "00ce706c939f691d7a0ffc0d5c4b360f4e1097c06336559234abc056b3c22301"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-8431ea1.tar.gz"
+      sha256 "004ba10ae466f41042881c9412b11dd8f2361facc73baff702dac3c0084bcb20"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-4842dcf.tar.gz"
-      sha256 "65af41fdf6bcc8f6115f25f6fc024723691255b87b4b35df5a634ecb06a9b7db"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-8431ea1.tar.gz"
+      sha256 "ec7859fc5511d87c51607a21662b83ef85aaa1a7e5c174008fbd843e3e4f892d"
     end
     on_intel do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-4842dcf.tar.gz"
-      sha256 "b61e2cdf036bff5e1ae0d773994e4727e96fa0c7bfe0199d6f597d81e0a1d2dd"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-8431ea1.tar.gz"
+      sha256 "55f0b8fdc75fddc67d0b464a1b3ce03a0bbaa504e109acca9c852cd6ada77ca8"
     end
   end
 
@@ -42,6 +42,7 @@ class Ownstack < Formula
   end
 
   test do
+    assert_match "ownstack", shell_output("#{bin}/ownstack --version")
     assert_match "OwnStack", shell_output("#{bin}/ownstack --help")
     assert_match "rails", shell_output("#{bin}/ownstack list")
   end
