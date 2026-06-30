@@ -1,27 +1,27 @@
 class Ownstack < Formula
   desc "Heroku-style ergonomics on infrastructure you own (OwnStack control-plane CLI)"
   homepage "https://ownstack.org"
-  version "2026.6.30.1"
+  version "2026.6.30.2"
 
   on_macos do
     on_arm do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-8431ea1.tar.gz"
-      sha256 "d75d8417e4f25e6c26166a560f96ce6bedc4ed173186e65ebaf6f4657893c7d6"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.6.30.2.tar.gz"
+      sha256 "dcec04b0a123f15c4f226e08313fd3e585832d860fc13d28e011d389ebe6da34"
     end
     on_intel do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-8431ea1.tar.gz"
-      sha256 "004ba10ae466f41042881c9412b11dd8f2361facc73baff702dac3c0084bcb20"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-2026.6.30.2.tar.gz"
+      sha256 "047cee87650efaaaf72bd5a550b06cd8b3bf4dded12bc3dd4316fed03a4f44b9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-8431ea1.tar.gz"
-      sha256 "ec7859fc5511d87c51607a21662b83ef85aaa1a7e5c174008fbd843e3e4f892d"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-2026.6.30.2.tar.gz"
+      sha256 "b2ee6fbe3d93a71144cc8cdbea59babc808bc211b1d9e1f45b5875af18358b1a"
     end
     on_intel do
-      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-8431ea1.tar.gz"
-      sha256 "55f0b8fdc75fddc67d0b464a1b3ce03a0bbaa504e109acca9c852cd6ada77ca8"
+      url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-2026.6.30.2.tar.gz"
+      sha256 "0126f7e2d3aa20f5522d589cfc119240c7a8835fd561ae2365331f392b4fa79d"
     end
   end
 
@@ -42,7 +42,7 @@ class Ownstack < Formula
   end
 
   test do
-    assert_match "ownstack", shell_output("#{bin}/ownstack --version")
+    assert_match version.to_s, shell_output("#{bin}/ownstack --version")
     assert_match "OwnStack", shell_output("#{bin}/ownstack --help")
     assert_match "rails", shell_output("#{bin}/ownstack list")
   end
