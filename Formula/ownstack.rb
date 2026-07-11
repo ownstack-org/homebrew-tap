@@ -6,18 +6,18 @@ class Ownstack < Formula
   on_macos do
     on_arm do
       url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.7.11.1.tar.gz"
-      sha256 "a4e59f5664ae768998477e84384ed02aa644efa2eb38895e933fb88c287f2e87"
+      sha256 "0caf9aa21881a804abe1aecd5ef0b644063424aa1791c4af4da41afb4ae1b2fa"
     end
     on_intel do
       url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-2026.7.11.1.tar.gz"
-      sha256 "a4e59f5664ae768998477e84384ed02aa644efa2eb38895e933fb88c287f2e87"
+      sha256 "df67a7e606b813699a34126cea288f924f0ec9714e9ce5b6915b2e9951c823ed"
     end
   end
 
   on_linux do
     on_arm do
       url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-2026.7.11.1.tar.gz"
-      sha256 "a4e59f5664ae768998477e84384ed02aa644efa2eb38895e933fb88c287f2e87"
+      sha256 "6651c7409adbf78cc3d284d07b9798943364ffec8b5d411356078e572d76f3fb"
     end
     on_intel do
       url "https://ownstack-cli.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-2026.7.11.1.tar.gz"
