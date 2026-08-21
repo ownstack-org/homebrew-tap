@@ -1,35 +1,31 @@
 class Ownstack < Formula
   desc "Heroku-style ergonomics on infrastructure you own (OwnStack control-plane CLI)"
   homepage "https://ownstack.org"
-  version "2026.8.20.1"
+  version "2026.8.20.2"
 
   on_macos do
     on_arm do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.8.20.1.tar.gz"
-      sha256 "89aef4a50e72f672dd8ee2e672a09a69d0757c22e61f6c5c8d72e1d5b84976b7"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.8.20.2.tar.gz"
+      sha256 "fc7bdd036c2f2fd1e479fe5d6b7afe931d2de127166b999045c6898b26b006a0"
     end
     on_intel do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-2026.8.20.1.tar.gz"
-      sha256 "4326b6ca149448cdaa592809994fc18011cb9caf24a0d1454af423f9ff7895d2"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-2026.8.20.2.tar.gz"
+      sha256 "9d7c662113dc9d901bed59f68e594a3cf3c66406ef1a1de54cd285ff31f70bce"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-2026.8.20.1.tar.gz"
-      sha256 "e86a05b2c9f60f2e85d5be670d7f25c590dba54abcfffd551ae7d832601c0643"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-2026.8.20.2.tar.gz"
+      sha256 "aa1fcb21392cf398538f87b380c7672501e114e7e2245a1d185f3cf7522bf1ae"
     end
     on_intel do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-2026.8.20.1.tar.gz"
-      sha256 "e42c28222fd68dd10cadbdf756a1db8a3d0e7bb84db6aee56a1d99f635c0d521"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-2026.8.20.2.tar.gz"
+      sha256 "210fae9a22f95500f8f275936d7ff10b71790d9c5cfa2f47121654d9207b3364"
     end
   end
 
   def install
-    # Tarball expands to cli/{bin,templates,completions,docs.yml}; Homebrew
-    # strips the single top-level dir, so the contents land at the staging
-    # root. Handle both layouts. Install the whole layout under libexec so the
-    # binary finds templates/docs.yml by walking up from its own location.
     libexec.install(Dir["cli"].any? ? Dir["cli/*"] : Dir["*"])
     bin.install_symlink libexec/"bin/ownstack"
 
