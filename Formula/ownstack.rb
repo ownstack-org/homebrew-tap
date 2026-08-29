@@ -1,27 +1,27 @@
 class Ownstack < Formula
   desc "Heroku-style ergonomics on infrastructure you own (OwnStack control-plane CLI)"
   homepage "https://ownstack.org"
-  version "2026.8.25.6"
+  version "2026.8.28.1"
 
   on_macos do
     on_arm do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.8.25.6.tar.gz"
-      sha256 "8a9ab726173f8c54001dcdd642d7e3428c8b707c6dd57b0d75cb809e1ce6c379"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.8.28.1.tar.gz"
+      sha256 "645d1024fd7cfe3efe75d394283c7a845e79ea193f19c30b404ce4b31ad87186"
     end
     on_intel do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-2026.8.25.6.tar.gz"
-      sha256 "781d4c068116cd7cfc97c637967a38b5e4438f2cc82475b44a4cc9173a07e7ed"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-amd64-2026.8.28.1.tar.gz"
+      sha256 "a80f5821f9d54f87a433d95055b2499c2c0ef6236246cc30c623b11136213659"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-2026.8.25.6.tar.gz"
-      sha256 "b5ef8d7da74f6dc58208a6ca0aade172f0dc32b069e0aa8ece05a1d866bda113"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-arm64-2026.8.28.1.tar.gz"
+      sha256 "313bfc80377c2e97aed3c6ef9fc68bc2628f03212890632bba87450a8e4fb10d"
     end
     on_intel do
-      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-2026.8.25.6.tar.gz"
-      sha256 "a08a220e1043fbb7c27f3af75a65c95568fe1cbd51678e12cfbdec0ac7fdfac2"
+      url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-linux-amd64-2026.8.28.1.tar.gz"
+      sha256 "0c09e916b9b4b679440bca0ff32b3202f84d64e3af13addf2a1147a8a78f875c"
     end
   end
 
