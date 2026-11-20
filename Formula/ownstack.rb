@@ -3,6 +3,8 @@ class Ownstack < Formula
   homepage "https://ownstack.org"
   version "2026.11.19.3"
 
+  depends_on "yq"
+
   on_macos do
     on_arm do
       url "https://ownstack-cli-releases.s3.us-west-2.amazonaws.com/ownstack-cli-go-darwin-arm64-2026.11.19.3.tar.gz"
